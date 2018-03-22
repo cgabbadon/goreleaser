@@ -35,7 +35,7 @@ func (Pipe) Default(ctx *context.Context) error {
 func (Pipe) Run(ctx *context.Context) error {
 	token, err := loadEnv("GITHUB_TOKEN", ctx.Config.EnvFiles.GitHubToken)
 	ctx.Token = token
-	if ctx.SkipPublish {
+	if ctx.SkipPublish || ctx.Config.Release.SkipPublish {
 		return pipeline.ErrSkipPublishEnabled
 	}
 	if ctx.Token == "" && err == nil {

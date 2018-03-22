@@ -45,7 +45,7 @@ func (Pipe) Run(ctx *context.Context) error {
 }
 
 func doRun(ctx *context.Context, c client.Client) error {
-	if ctx.SkipPublish {
+	if ctx.SkipPublish || ctx.Config.Release.SkipPublish {
 		return pipeline.ErrSkipPublishEnabled
 	}
 	log.WithField("tag", ctx.Git.CurrentTag).

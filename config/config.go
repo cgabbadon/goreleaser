@@ -114,6 +114,7 @@ type Release struct {
 	GitHub       Repo   `yaml:",omitempty"`
 	Draft        bool   `yaml:",omitempty"`
 	Prerelease   bool   `yaml:",omitempty"`
+	SkipPublish  bool   `yaml:"skip_publish,omitempty"`
 	NameTemplate string `yaml:"name_template,omitempty"`
 }
 

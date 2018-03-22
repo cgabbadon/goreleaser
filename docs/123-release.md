@@ -17,6 +17,10 @@ release:
     owner: user
     name: repo
 
+  # If set to true, will not publish release to GitHub,
+  # but may publish to other repositories (i.e. Artifactory, Docker, etc.).
+  skip_publish: false
+
   # If set to true, will not auto-publish the release.
   # Default is false.
   draft: true
